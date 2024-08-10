@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { onBeforeMount } from "vue";
 import { useStore } from "./stores/index";
+import Item from "./components/Item.vue";
 
 const store = useStore();
 
@@ -25,6 +26,13 @@ onBeforeMount(() => {
       </nav>
       <h1 class="title">{{ store.breadcrumbs.at(-1) }}</h1>
     </header>
+    <section class="items-grid">
+      <Item
+        v-for="(item, idx) in store.items"
+        :key="`item-${idx}`"
+        :item="item"
+      />
+    </section>
   </section>
 </template>
 
@@ -67,5 +75,11 @@ onBeforeMount(() => {
 
 .title {
   font-size: 3rem;
+}
+
+.items-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 40px 48px;
 }
 </style>
