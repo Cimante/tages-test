@@ -7,6 +7,7 @@ export const useStore = defineStore("store", {
   state: () => ({
     items: [] as Item[],
     materials: [] as Material[],
+    breadcrumbs: ["Главная", "Системы хранения", "Комплекты стеллажных систем"],
   }),
   actions: {
     async loadData() {
