@@ -1,3 +1,6 @@
+@import "fonts.scss";
+@import "variables.scss";
+
 :root {
   line-height: 1.5;
   font-weight: 400;
@@ -14,4 +17,11 @@ body {
   font-size: 16px;
   line-height: normal;
   font-family: "SF UI Text", Arial, Helvetica, sans-serif;
+}
+
+.title {
+  font-family: "SF Pro Display", Arial, Helvetica, sans-serif;
+  font-size: 2.25rem;
+  font-weight: bold;
+  line-height: 133%;
 }

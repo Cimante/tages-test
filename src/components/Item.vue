@@ -31,7 +31,7 @@ const props = defineProps<{
 </template>
 
 <style lang="scss">
-@import "../styles/variables.scss";
+@import "@/assets/styles/variables.scss";
 
 .item {
   position: relative;
@@ -42,8 +42,8 @@ const props = defineProps<{
 }
 
 .item__image {
+  min-height: 14.8125rem;
   margin: 0 auto;
-  aspect-ratio: 1 / 1;
   object-fit: contain;
   object-position: center center;
 }
@@ -69,7 +69,8 @@ const props = defineProps<{
   min-height: 17px;
   font-size: 0.625rem;
   line-height: 1.4;
-  letter-spacing: 2%;
+  letter-spacing: 0.02em;
+  color: $grey-3;
 }
 
 .item__name {

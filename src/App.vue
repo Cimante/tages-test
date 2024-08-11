@@ -37,7 +37,7 @@ onBeforeMount(() => {
 </template>
 
 <style lang="scss">
-@import "@/styles/variables.scss";
+@import "@/assets/styles/main.scss";
 
 .container {
   margin: 0 11.25vw;
@@ -71,10 +71,6 @@ onBeforeMount(() => {
     padding: 16px;
     color: $grey-2;
   }
-}
-
-.title {
-  font-size: 3rem;
 }
 
 .items-grid {
