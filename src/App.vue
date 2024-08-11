@@ -1,13 +1,24 @@
 <script setup lang="ts">
 import { onBeforeMount } from "vue";
+import { PriceSort } from "./types/priceSort";
+import { MaterialFilter } from "./types/materialFilter";
 import { useStore } from "./stores/index";
 import Item from "./components/Item.vue";
+import Dropdown from "./components/Dropdown.vue";
 
 const store = useStore();
 
 onBeforeMount(() => {
   store.loadData();
 });
+
+const updatePriceSort = (value: PriceSort) => {
+  store.priceSort = value;
+};
+
+const updateMaterialFilter = (value: MaterialFilter) => {
+  store.materialFilter = value;
+};
 </script>
 
 <template>
@@ -25,10 +36,28 @@ onBeforeMount(() => {
         </ul>
       </nav>
       <h1 class="title">{{ store.breadcrumbs.at(-1) }}</h1>
+      <section class="dropdowns">
+        <Dropdown
+          name="sort-by-price"
+          label="Сортировать по:"
+          id="sort"
+          nullishLabel="По умолчанию"
+          :values="store.priceSortValues"
+          @change="updatePriceSort($event)"
+        />
+        <Dropdown
+          name="filter-by-material"
+          label="Материал"
+          id="filter"
+          nullishLabel="Все"
+          :values="store.materialFilterValues"
+          @change="updateMaterialFilter($event)"
+        />
+      </section>
     </header>
     <section class="items-grid">
       <Item
-        v-for="(item, idx) in store.items"
+        v-for="(item, idx) in store.getItems"
         :key="`item-${idx}`"
         :item="item"
       />
@@ -37,8 +66,6 @@ onBeforeMount(() => {
 </template>
 
 <style lang="scss">
-@import "@/assets/styles/main.scss";
-
 .container {
   margin: 0 11.25vw;
 }
@@ -71,6 +98,11 @@ onBeforeMount(() => {
     padding: 16px;
     color: $grey-2;
   }
+}
+
+.dropdowns {
+  display: flex;
+  gap: 1.5rem;
 }
 
 .items-grid {
