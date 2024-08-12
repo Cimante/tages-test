@@ -4,11 +4,7 @@ import { Material } from "@/types/material";
 import { PriceSort } from "@/types/priceSort";
 import { MaterialFilter } from "@/types/materialFilter";
 import { api } from "@/functions/api";
-
-type dropdownValues = {
-  name: string;
-  value: string;
-};
+import { DropdownValues } from "@/types/dropdownValues";
 
 export const useStore = defineStore("store", {
   state: () => ({
@@ -26,9 +22,9 @@ export const useStore = defineStore("store", {
         name: "По убыванию",
         value: "desc",
       },
-    ] as dropdownValues[],
+    ] as DropdownValues[],
 
-    materialFilterValues: [] as dropdownValues[],
+    materialFilterValues: [] as DropdownValues[],
   }),
   actions: {
     async loadData() {
