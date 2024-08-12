@@ -63,7 +63,7 @@ const updateValue = (e: Event) => {
     padding-left: 16px;
     border: none;
     background-color: $grey-4;
-    background-image: url("./src/assets/icons/chevron-bottom.svg");
+    background-image: url("@/assets/icons/chevron-bottom.svg");
     background-repeat: no-repeat;
     background-position: 98% center;
     font-family: $font-title;

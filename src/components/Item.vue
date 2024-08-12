@@ -18,7 +18,7 @@ const emits = defineEmits<{
   <section class="item">
     <img
       class="item__image"
-      :src="props.item.image.url"
+      :src="'/tages-test' + props.item.image.url"
       alt="item image"
       loading="lazy"
     />

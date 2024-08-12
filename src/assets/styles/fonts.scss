@@ -1,14 +1,13 @@
 @font-face {
   font-family: "SF Pro Display";
-  src: url("./src/assets/fonts/SFProDisplay-Bold.eot");
+  src: url("@/assets/fonts/SFProDisplay-Bold.eot");
   src: local("SF Pro Display Bold"), local("SFProDisplay-Bold"),
-    url("./src/assets/fonts/SFProDisplay-Bold.eot?#iefix")
+    url("@/assets/fonts/SFProDisplay-Bold.eot?#iefix")
       format("embedded-opentype"),
-    url("./src/assets/fonts/SFProDisplay-Bold.woff2") format("woff2"),
-    url("./src/assets/fonts/SFProDisplay-Bold.woff") format("woff"),
-    url("./src/assets/fonts/SFProDisplay-Bold.ttf") format("truetype"),
-    url("./src/assets/fonts/SFProDisplay-Bold.svg#SFProDisplay-Bold")
-      format("svg");
+    url("@/assets/fonts/SFProDisplay-Bold.woff2") format("woff2"),
+    url("@/assets/fonts/SFProDisplay-Bold.woff") format("woff"),
+    url("@/assets/fonts/SFProDisplay-Bold.ttf") format("truetype"),
+    url("@/assets/fonts/SFProDisplay-Bold.svg#SFProDisplay-Bold") format("svg");
   font-weight: bold;
   font-style: normal;
   font-display: swap;
@@ -16,14 +15,14 @@
 
 @font-face {
   font-family: "SF Pro Display";
-  src: url("./src/assets/fonts/SFProDisplay-Medium.eot");
+  src: url("@/assets/fonts/SFProDisplay-Medium.eot");
   src: local("SF Pro Display Medium"), local("SFProDisplay-Medium"),
-    url("./src/assets/fonts/SFProDisplay-Medium.eot?#iefix")
+    url("@/assets/fonts/SFProDisplay-Medium.eot?#iefix")
       format("embedded-opentype"),
-    url("./src/assets/fonts/SFProDisplay-Medium.woff2") format("woff2"),
-    url("./src/assets/fonts/SFProDisplay-Medium.woff") format("woff"),
-    url("./src/assets/fonts/SFProDisplay-Medium.ttf") format("truetype"),
-    url("./src/assets/fonts/SFProDisplay-Medium.svg#SFProDisplay-Medium")
+    url("@/assets/fonts/SFProDisplay-Medium.woff2") format("woff2"),
+    url("@/assets/fonts/SFProDisplay-Medium.woff") format("woff"),
+    url("@/assets/fonts/SFProDisplay-Medium.ttf") format("truetype"),
+    url("@/assets/fonts/SFProDisplay-Medium.svg#SFProDisplay-Medium")
       format("svg");
   font-weight: 500;
   font-style: normal;
@@ -32,14 +31,14 @@
 
 @font-face {
   font-family: "SF Pro Display";
-  src: url("./src/assets/fonts/SFProDisplay-Regular.eot");
+  src: url("@/assets/fonts/SFProDisplay-Regular.eot");
   src: local("SF Pro Display Regular"), local("SFProDisplay-Regular"),
-    url("./src/assets/fonts/SFProDisplay-Regular.eot?#iefix")
+    url("@/assets/fonts/SFProDisplay-Regular.eot?#iefix")
       format("embedded-opentype"),
-    url("./src/assets/fonts/SFProDisplay-Regular.woff2") format("woff2"),
-    url("./src/assets/fonts/SFProDisplay-Regular.woff") format("woff"),
-    url("./src/assets/fonts/SFProDisplay-Regular.ttf") format("truetype"),
-    url("./src/assets/fonts/SFProDisplay-Regular.svg#SFProDisplay-Regular")
+    url("@/assets/fonts/SFProDisplay-Regular.woff2") format("woff2"),
+    url("@/assets/fonts/SFProDisplay-Regular.woff") format("woff"),
+    url("@/assets/fonts/SFProDisplay-Regular.ttf") format("truetype"),
+    url("@/assets/fonts/SFProDisplay-Regular.svg#SFProDisplay-Regular")
       format("svg");
   font-weight: normal;
   font-style: normal;
@@ -48,14 +47,13 @@
 
 @font-face {
   font-family: "SF UI Text";
-  src: url("./src/assets/fonts/SFUIText-Medium.eot");
+  src: url("@/assets/fonts/SFUIText-Medium.eot");
   src: local("SF UI Text Medium"), local("SFUIText-Medium"),
-    url("./src/assets/fonts/SFUIText-Medium.eot?#iefix")
-      format("embedded-opentype"),
-    url("./src/assets/fonts/SFUIText-Medium.woff2") format("woff2"),
-    url("./src/assets/fonts/SFUIText-Medium.woff") format("woff"),
-    url("./src/assets/fonts/SFUIText-Medium.ttf") format("truetype"),
-    url("./src/assets/fonts/SFUIText-Medium.svg#SFUIText-Medium") format("svg");
+    url("@/assets/fonts/SFUIText-Medium.eot?#iefix") format("embedded-opentype"),
+    url("@/assets/fonts/SFUIText-Medium.woff2") format("woff2"),
+    url("@/assets/fonts/SFUIText-Medium.woff") format("woff"),
+    url("@/assets/fonts/SFUIText-Medium.ttf") format("truetype"),
+    url("@/assets/fonts/SFUIText-Medium.svg#SFUIText-Medium") format("svg");
   font-weight: 500;
   font-style: normal;
   font-display: swap;
@@ -63,15 +61,14 @@
 
 @font-face {
   font-family: "SF UI Text";
-  src: url("./src/assets/fonts/SFUIText-Regular.eot");
+  src: url("@/assets/fonts/SFUIText-Regular.eot");
   src: local("SF UI Text Regular"), local("SFUIText-Regular"),
-    url("./src/assets/fonts/SFUIText-Regular.eot?#iefix")
+    url("@/assets/fonts/SFUIText-Regular.eot?#iefix")
       format("embedded-opentype"),
-    url("./src/assets/fonts/SFUIText-Regular.woff2") format("woff2"),
-    url("./src/assets/fonts/SFUIText-Regular.woff") format("woff"),
-    url("./src/assets/fonts/SFUIText-Regular.ttf") format("truetype"),
-    url("./src/assets/fonts/SFUIText-Regular.svg#SFUIText-Regular")
-      format("svg");
+    url("@/assets/fonts/SFUIText-Regular.woff2") format("woff2"),
+    url("@/assets/fonts/SFUIText-Regular.woff") format("woff"),
+    url("@/assets/fonts/SFUIText-Regular.ttf") format("truetype"),
+    url("@/assets/fonts/SFUIText-Regular.svg#SFUIText-Regular") format("svg");
   font-weight: normal;
   font-style: normal;
   font-display: swap;

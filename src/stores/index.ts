@@ -32,8 +32,8 @@ export const useStore = defineStore("store", {
   }),
   actions: {
     async loadData() {
-      this.items = await api<Item[]>("/items.json");
-      this.materials = await api<Material[]>("/materials.json");
+      this.items = await api<Item[]>("/tages-test/items.json");
+      this.materials = await api<Material[]>("/tages-test/materials.json");
 
       this.materials.forEach((material) => {
         this.materialFilterValues.push({
