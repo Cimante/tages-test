@@ -39,10 +39,12 @@ const props = defineProps<{
   flex-direction: column;
   border: 1px solid $grey-5;
   padding: 9px 12px 10px;
+  width: clamp(18rem, 50vw, 21rem);
+  box-sizing: border-box;
 }
 
 .item__image {
-  min-height: 14.8125rem;
+  width: clamp(12rem, 100%, 14.875rem);
   margin: 0 auto;
   object-fit: contain;
   object-position: center center;

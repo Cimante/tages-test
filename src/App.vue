@@ -66,10 +66,6 @@ const updateMaterialFilter = (value: MaterialFilter) => {
 </template>
 
 <style lang="scss">
-.container {
-  margin: 0 11.25vw;
-}
-
 .breadcrumbs__list {
   display: flex;
   align-items: center;
@@ -103,11 +99,12 @@ const updateMaterialFilter = (value: MaterialFilter) => {
 .dropdowns {
   display: flex;
   gap: 1.5rem;
+  margin-bottom: 2.5rem;
 }
 
 .items-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 40px 48px;
+  grid-template-columns: repeat(auto-fit, 20rem);
+  gap: 2.25rem 3rem;
 }
 </style>

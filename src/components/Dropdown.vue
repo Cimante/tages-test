@@ -44,6 +44,7 @@ const updateValue = (e: Event) => {
   display: flex;
   flex-direction: column;
   gap: 6px;
+  width: clamp(12rem, 100%, 18rem);
 
   &__label {
     display: inline-block;
@@ -58,7 +59,7 @@ const updateValue = (e: Event) => {
     outline: 0;
 
     height: 2.5rem;
-    width: 18rem;
+    width: 100%;
     padding-left: 16px;
     border: none;
     background-color: $grey-4;
