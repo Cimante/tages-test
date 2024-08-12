@@ -10,6 +10,7 @@ const store = useStore();
 
 onBeforeMount(() => {
   store.loadData();
+  store.cartLoad();
 });
 
 const updatePriceSort = (value: PriceSort) => {
@@ -60,6 +61,8 @@ const updateMaterialFilter = (value: MaterialFilter) => {
         v-for="(item, idx) in store.getItems"
         :key="`item-${idx}`"
         :item="item"
+        :isInCart="store.cart.includes(item.id)"
+        @cartUpdate="store.cartUpdate($event)"
       />
     </section>
   </section>

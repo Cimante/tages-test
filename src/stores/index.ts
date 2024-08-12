@@ -3,8 +3,10 @@ import { Item } from "@/types/item";
 import { Material } from "@/types/material";
 import { PriceSort } from "@/types/priceSort";
 import { MaterialFilter } from "@/types/materialFilter";
-import { api } from "@/functions/api";
 import { DropdownValues } from "@/types/dropdownValues";
+import { CartItem } from "@/types/cartItem";
+import { api } from "@/functions/api";
+import { storageSet, storageGet } from "@/functions/storage";
 
 export const useStore = defineStore("store", {
   state: () => ({
@@ -25,6 +27,7 @@ export const useStore = defineStore("store", {
     ] as DropdownValues[],
 
     materialFilterValues: [] as DropdownValues[],
+    cart: [] as CartItem[],
   }),
   actions: {
     async loadData() {
@@ -37,6 +40,17 @@ export const useStore = defineStore("store", {
           value: material.id,
         });
       });
+    },
+    cartUpdate(id: CartItem) {
+      if (this.cart.includes(id)) {
+        this.cart = this.cart.filter((item) => item !== id);
+      } else {
+        this.cart.push(id);
+      }
+      storageSet(this.cart, "cart");
+    },
+    cartLoad() {
+      this.cart = storageGet<CartItem[]>("cart");
     },
   },
   getters: {

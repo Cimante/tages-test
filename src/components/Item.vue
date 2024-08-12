@@ -1,8 +1,14 @@
 <script setup lang="ts">
 import { Item } from "@/types/item";
+import { CartItem } from "@/types/cartItem";
 
 const props = defineProps<{
   item: Item;
+  isInCart: boolean;
+}>();
+
+const emits = defineEmits<{
+  cartUpdate: [id: CartItem];
 }>();
 </script>
 
@@ -17,14 +23,22 @@ const props = defineProps<{
     <span class="item__sale-label" v-if="props.item.price.old_price">
       Скидка
     </span>
-    <div class="item__info">
-      <span class="item__label">{{ props.item.code }}</span>
-      <span class="item__name">{{ props.item.name }}</span>
-      <div class="item__price">
-        <span v-if="props.item.price.old_price" class="item__old-price">
-          {{ props.item.price.old_price }}₽
-        </span>
-        <span> {{ props.item.price.current_price }}₽ </span>
+    <div class="item__info-wrapper">
+      <div class="item__info">
+        <span class="item__label">{{ props.item.code }}</span>
+        <span class="item__name">{{ props.item.name }}</span>
+        <div class="item__price">
+          <span v-if="props.item.price.old_price" class="item__old-price">
+            {{ props.item.price.old_price }}₽
+          </span>
+          <span> {{ props.item.price.current_price }}₽ </span>
+        </div>
+      </div>
+      <div class="item__controls">
+        <div class="item__cart-btn" @click="$emit('cartUpdate', props.item.id)">
+          <img v-if="!props.isInCart" src="@/assets/icons/cart.svg" alt="" />
+          <img v-else src="@/assets/icons/circle-checked.svg" alt="" />
+        </div>
       </div>
     </div>
   </section>
@@ -64,6 +78,12 @@ const props = defineProps<{
   display: flex;
   flex-direction: column;
   gap: 6px;
+
+  &-wrapper {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+  }
 }
 
 .item__label {
@@ -88,5 +108,15 @@ const props = defineProps<{
 .item__old-price {
   text-decoration: line-through;
   color: $grey-3;
+}
+
+.item__cart-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.25rem;
+  height: 2.25rem;
+  position: relative;
+  cursor: pointer;
 }
 </style>
