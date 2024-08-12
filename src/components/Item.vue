@@ -5,10 +5,12 @@ import { CartItem } from "@/types/cartItem";
 const props = defineProps<{
   item: Item;
   isInCart: boolean;
+  isInFav: boolean;
 }>();
 
 const emits = defineEmits<{
   cartUpdate: [id: CartItem];
+  favouritesUpdate: [id: CartItem];
 }>();
 </script>
 
@@ -38,6 +40,13 @@ const emits = defineEmits<{
         <div class="item__cart-btn" @click="$emit('cartUpdate', props.item.id)">
           <img v-if="!props.isInCart" src="@/assets/icons/cart.svg" alt="" />
           <img v-else src="@/assets/icons/circle-checked.svg" alt="" />
+        </div>
+        <div
+          class="item__fav-btn"
+          @click="$emit('favouritesUpdate', props.item.id)"
+        >
+          <img v-if="!props.isInFav" src="@/assets/icons/heart.svg" alt="" />
+          <img v-else src="@/assets/icons/heart-full.svg" alt="" />
         </div>
       </div>
     </div>
@@ -110,7 +119,13 @@ const emits = defineEmits<{
   color: $grey-3;
 }
 
-.item__cart-btn {
+.item__controls {
+  display: flex;
+  align-items: center;
+}
+
+.item__cart-btn,
+.item__fav-btn {
   display: flex;
   align-items: center;
   justify-content: center;

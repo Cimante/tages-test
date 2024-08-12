@@ -11,6 +11,7 @@ const store = useStore();
 onBeforeMount(() => {
   store.loadData();
   store.cartLoad();
+  store.favouritesLoad();
 });
 
 const updatePriceSort = (value: PriceSort) => {
@@ -62,7 +63,9 @@ const updateMaterialFilter = (value: MaterialFilter) => {
         :key="`item-${idx}`"
         :item="item"
         :isInCart="store.cart.includes(item.id)"
+        :isInFav="store.favourites.includes(item.id)"
         @cartUpdate="store.cartUpdate($event)"
+        @favouritesUpdate="store.favouritesUpdate($event)"
       />
     </section>
   </section>

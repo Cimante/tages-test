@@ -28,6 +28,7 @@ export const useStore = defineStore("store", {
 
     materialFilterValues: [] as DropdownValues[],
     cart: [] as CartItem[],
+    favourites: [] as CartItem[],
   }),
   actions: {
     async loadData() {
@@ -51,6 +52,17 @@ export const useStore = defineStore("store", {
     },
     cartLoad() {
       this.cart = storageGet<CartItem[]>("cart");
+    },
+    favouritesUpdate(id: CartItem) {
+      if (this.favourites.includes(id)) {
+        this.favourites = this.favourites.filter((item) => item !== id);
+      } else {
+        this.favourites.push(id);
+      }
+      storageSet(this.favourites, "favourites");
+    },
+    favouritesLoad() {
+      this.favourites = storageGet<CartItem[]>("favourites");
     },
   },
   getters: {
