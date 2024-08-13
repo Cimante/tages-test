@@ -37,16 +37,39 @@ const emits = defineEmits<{
         </div>
       </div>
       <div class="item__controls">
-        <div class="item__cart-btn" @click="$emit('cartUpdate', props.item.id)">
-          <img v-if="!props.isInCart" src="@/assets/icons/cart.svg" alt="" />
-          <img v-else src="@/assets/icons/circle-checked.svg" alt="" />
+        <div
+          class="item__btn cart-btn"
+          @click="$emit('cartUpdate', props.item.id)"
+        >
+          <img
+            v-if="!props.isInCart"
+            class="btn-icon"
+            src="@/assets/icons/cart.svg"
+            alt=""
+          />
+          <img
+            v-else
+            class="btn-icon active"
+            src="@/assets/icons/circle-checked.svg"
+            alt=""
+          />
         </div>
         <div
-          class="item__fav-btn"
+          class="item__btn fav-btn"
           @click="$emit('favouritesUpdate', props.item.id)"
         >
-          <img v-if="!props.isInFav" src="@/assets/icons/heart.svg" alt="" />
-          <img v-else src="@/assets/icons/heart-full.svg" alt="" />
+          <img
+            v-if="!props.isInFav"
+            class="btn-icon"
+            src="@/assets/icons/heart.svg"
+            alt=""
+          />
+          <img
+            v-else
+            class="btn-icon active"
+            src="@/assets/icons/heart-full.svg"
+            alt=""
+          />
         </div>
       </div>
     </div>
@@ -64,6 +87,11 @@ const emits = defineEmits<{
   padding: 9px 12px 10px;
   width: clamp(18rem, 50vw, 21rem);
   box-sizing: border-box;
+  transition: border-color 0.2s;
+
+  &:hover {
+    border-color: $grey-2;
+  }
 }
 
 .item__image {
@@ -124,8 +152,7 @@ const emits = defineEmits<{
   align-items: center;
 }
 
-.item__cart-btn,
-.item__fav-btn {
+.item__btn {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -133,5 +160,14 @@ const emits = defineEmits<{
   height: 2.25rem;
   position: relative;
   cursor: pointer;
+
+  .btn-icon:not(.active) {
+    opacity: 0.6;
+    transition: opacity 0.2s;
+
+    &:hover {
+      opacity: 1;
+    }
+  }
 }
 </style>
