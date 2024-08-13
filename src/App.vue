@@ -1,7 +1,5 @@
 <script setup lang="ts">
 import { onBeforeMount } from "vue";
-import { PriceSort } from "./types/priceSort";
-import { MaterialFilter } from "./types/materialFilter";
 import { useStore } from "./stores/index";
 import Item from "./components/Item.vue";
 import Dropdown from "./components/Dropdown.vue";
@@ -13,14 +11,6 @@ onBeforeMount(() => {
   store.cartLoad();
   store.favouritesLoad();
 });
-
-const updatePriceSort = (value: PriceSort) => {
-  store.priceSort = value;
-};
-
-const updateMaterialFilter = (value: MaterialFilter) => {
-  store.materialFilter = value;
-};
 </script>
 
 <template>
@@ -45,7 +35,7 @@ const updateMaterialFilter = (value: MaterialFilter) => {
           id="sort"
           nullishLabel="По умолчанию"
           :values="store.priceSortValues"
-          @change="updatePriceSort($event)"
+          @change="store.updatePriceSort($event)"
         />
         <Dropdown
           name="filter-by-material"
@@ -53,7 +43,7 @@ const updateMaterialFilter = (value: MaterialFilter) => {
           id="filter"
           nullishLabel="Все"
           :values="store.materialFilterValues"
-          @change="updateMaterialFilter($event)"
+          @change="store.updateMaterialFilter($event)"
         />
       </section>
     </header>

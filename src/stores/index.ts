@@ -5,6 +5,7 @@ import { PriceSort } from "@/types/priceSort";
 import { MaterialFilter } from "@/types/materialFilter";
 import { DropdownValues } from "@/types/dropdownValues";
 import { CartItem } from "@/types/cartItem";
+import { FavouritesItem } from "@/types/favouritesItem";
 import { api } from "@/functions/api";
 import { storageSet, storageGet } from "@/functions/storage";
 
@@ -28,7 +29,7 @@ export const useStore = defineStore("store", {
 
     materialFilterValues: [] as DropdownValues[],
     cart: [] as CartItem[],
-    favourites: [] as CartItem[],
+    favourites: [] as FavouritesItem[],
   }),
   actions: {
     async loadData() {
@@ -62,7 +63,13 @@ export const useStore = defineStore("store", {
       storageSet(this.favourites, "favourites");
     },
     favouritesLoad() {
-      this.favourites = storageGet<CartItem[]>("favourites");
+      this.favourites = storageGet<FavouritesItem[]>("favourites");
+    },
+    updatePriceSort(value: PriceSort) {
+      this.priceSort = value;
+    },
+    updateMaterialFilter(value: MaterialFilter) {
+      this.materialFilter = value;
     },
   },
   getters: {
