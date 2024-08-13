@@ -1,14 +1,15 @@
 @font-face {
   font-family: "SF Pro Display";
-  src: url("@/assets/fonts/SFProDisplay-Bold.eot");
-  src: local("SF Pro Display Bold"), local("SFProDisplay-Bold"),
-    url("@/assets/fonts/SFProDisplay-Bold.eot?#iefix")
+  src: url("@/assets/fonts/SFProDisplay-Semibold.eot");
+  src: local("SF Pro Display Semibold"), local("SFProDisplay-Semibold"),
+    url("@/assets/fonts/SFProDisplay-Semibold.eot?#iefix")
       format("embedded-opentype"),
-    url("@/assets/fonts/SFProDisplay-Bold.woff2") format("woff2"),
-    url("@/assets/fonts/SFProDisplay-Bold.woff") format("woff"),
-    url("@/assets/fonts/SFProDisplay-Bold.ttf") format("truetype"),
-    url("@/assets/fonts/SFProDisplay-Bold.svg#SFProDisplay-Bold") format("svg");
-  font-weight: bold;
+    url("@/assets/fonts/SFProDisplay-Semibold.woff2") format("woff2"),
+    url("@/assets/fonts/SFProDisplay-Semibold.woff") format("woff"),
+    url("@/assets/fonts/SFProDisplay-Semibold.ttf") format("truetype"),
+    url("@/assets/fonts/SFProDisplay-Semibold.svg#SFProDisplay-Semibold")
+      format("svg");
+  font-weight: 600;
   font-style: normal;
   font-display: swap;
 }
